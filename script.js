@@ -1,19 +1,14 @@
-/* ======================================================
-   ESTILO: LUXURY KINETICS - MyStudyJourney
-   ====================================================== */
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. CURSOR PERSONALIZADO (CORREGIDO)
+// 1. CURSOR PERSONALIZADO (CORREGIDO)
     const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor'; // Usamos className para asegurar
+    cursor.classList.add('custom-cursor');
     document.body.appendChild(cursor);
 
     document.addEventListener('mousemove', (e) => {
-        // Usamos translate3d para mayor suavidad y rendimiento
+        // Esta línea es la que hace que el círculo siga al mouse
         cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
     });
 
-    const links = document.querySelectorAll('a, button, video, .gallery-item, .project-link');
+    const links = document.querySelectorAll('a, button, video, .gallery-item');
     links.forEach(link => {
         link.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
         link.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
@@ -59,4 +54,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
