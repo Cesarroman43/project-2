@@ -289,3 +289,61 @@ main ul li a.project-link:hover {
     box-shadow: 0 10px 20px rgba(141, 123, 104, 0.2);
 }
 
+/* --- NUEVAS MEJORAS DE LUJO --- */
+
+/* Revelación suave */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(5px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+/* Cursor de Autor */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #8d7b68;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease, background 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-hover {
+    transform: translate(-50%, -50%) scale(2.5);
+    background-color: rgba(141, 123, 104, 0.1);
+}
+
+/* Barra de lectura */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #8d7b68;
+    z-index: 2000;
+    width: 0%;
+}
+
+/* Ajuste de Navbar al bajar */
+.nav-scrolled {
+    padding: 15px 0 !important;
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* Ocultar cursor real en PC para usar el de lujo */
+@media (min-width: 1024px) {
+    body { cursor: none; }
+    a, button, video { cursor: none; }
+}
