@@ -289,20 +289,32 @@ main ul li a.project-link:hover {
     box-shadow: 0 10px 20px rgba(141, 123, 104, 0.2);
 }
 
-/* --- NUEVAS MEJORAS DE LUJO --- */
+/* --- REVELACIÓN CINEMATOGRÁFICA (CORREGIDO) --- */
 
-/* Revelación suave */
+/* 1. Estado inicial: Totalmente invisible y desplazado */
 .reveal-element {
-    opacity: 0;
-    transform: translateY(30px);
-    filter: blur(5px);
-    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0 !important;
+    transform: translateY(50px) !important; /* Más distancia para que se note el movimiento */
+    filter: blur(10px) !important;
+    /* Transición muy lenta (1.5s) y fluida */
+    transition: 
+        opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+        transform 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+        filter 1.5s ease !important;
+    will-change: opacity, transform; /* Prepara al navegador para la animación */
 }
 
+/* 2. Estado visible: Se activa mediante el JavaScript */
 .reveal-element.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0px);
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    filter: blur(0) !important;
+}
+
+/* 3. Retraso especial para párrafos y videos (para efecto cascada) */
+p.reveal-element, video.reveal-element {
+    transition-delay: 0.2s; /* Tardan un poquito más en empezar para verse más natural */
+}
 }
 
 /* Cursor de Autor */
@@ -347,3 +359,4 @@ main ul li a.project-link:hover {
     body { cursor: none; }
     a, button, video { cursor: none; }
 }
+
