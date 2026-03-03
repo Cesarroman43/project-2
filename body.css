@@ -315,32 +315,32 @@ p.reveal-element, video.reveal-element {
     transition-delay: 0.2s;
 }
 
+/* --- CURSOR DE AUTOR (RE-CORREGIDO) --- */
 .custom-cursor {
     width: 20px;
     height: 20px;
     border: 2px solid #8d7b68 !important;
     border-radius: 50%;
     position: fixed;
-    top: 0;   /* Dejar en 0 */
-    left: 0;  /* Dejar en 0 */
-    pointer-events: none; /* ESTO ES VITAL: permite hacer clic a través del círculo */
+    top: 0;
+    left: 0;
+    pointer-events: none;
     z-index: 999999 !important;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
     background-color: transparent;
+    /* Esta es la clave del efecto suave/lento */
+    transition: 
+        transform 0.1s ease-out, 
+        width 0.3s ease, 
+        height 0.3s ease, 
+        background-color 0.3s ease;
+    display: block !important;
 }
 
 .cursor-hover {
-    width: 50px !important;
-    height: 50px !important;
+    width: 60px !important;
+    height: 60px !important;
     background-color: rgba(141, 123, 104, 0.15) !important;
     border: 1px solid #8d7b68 !important;
-}
-
-/* Ocultar el cursor original solo en pantallas grandes */
-@media (min-width: 1024px) {
-    body, a, button, video, .gallery-item { 
-        cursor: none !important; 
-    }
 }
 
 /* --- BARRA DE PROGRESO (LECTURA) --- */
@@ -368,6 +368,7 @@ p.reveal-element, video.reveal-element {
         cursor: none !important; 
     }
 }
+
 
 
 
