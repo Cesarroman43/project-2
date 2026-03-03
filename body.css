@@ -315,23 +315,34 @@ p.reveal-element, video.reveal-element {
     transition-delay: 0.2s;
 }
 
-/* --- CURSOR PERSONALIZADO --- */
+/* --- CURSOR DE AUTOR (CORREGIDO) --- */
 .custom-cursor {
     width: 20px;
     height: 20px;
-    border: 1px solid #8d7b68;
+    border: 2px solid #8d7b68 !important; /* Más visible */
     border-radius: 50%;
     position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.2s ease, background 0.3s ease;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Crucial: para que no bloquee los clics */
+    z-index: 999999 !important; /* Por encima de todo */
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
     background-color: transparent;
+    /* Quitamos el transform de aquí porque lo pone el JS */
 }
 
 .cursor-hover {
-    transform: translate(-50%, -50%) scale(2.5);
-    background-color: rgba(141, 123, 104, 0.1);
+    width: 50px !important;
+    height: 50px !important;
+    background-color: rgba(141, 123, 104, 0.15) !important;
+    border: 1px solid #8d7b68 !important;
+}
+
+/* Ocultar el cursor original solo en pantallas grandes */
+@media (min-width: 1024px) {
+    body, a, button, video, .gallery-item { 
+        cursor: none !important; 
+    }
 }
 
 /* --- BARRA DE PROGRESO (LECTURA) --- */
@@ -359,5 +370,6 @@ p.reveal-element, video.reveal-element {
         cursor: none !important; 
     }
 }
+
 
 
