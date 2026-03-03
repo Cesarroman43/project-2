@@ -3,16 +3,23 @@
    ====================================================== */
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. CURSOR PERSONALIZADO (CORREGIDO)
+// 1. CURSOR PERSONALIZADO (VERSIÓN SEGURA)
     const cursor = document.createElement('div');
     cursor.classList.add('custom-cursor');
     document.body.appendChild(cursor);
 
+    // Si el JS llega hasta aquí, activamos el modo "Cursor Especial"
+    cursor.style.display = 'block';
+    document.body.classList.add('custom-cursor-active');
+
     document.addEventListener('mousemove', (e) => {
-        // translate3d es más fluido para el movimiento del cursor
-        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        // Usamos requestAnimationFrame para que sea ultra fluido
+        window.requestAnimationFrame(() => {
+            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        });
     });
 
+    // Hover inteligente
     const links = document.querySelectorAll('a, button, video, .gallery-item');
     links.forEach(link => {
         link.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
@@ -59,3 +66,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 }); // <--- ESTA LLAVE ES LA QUE CIERRA TODO EL CÓDIGO
+
