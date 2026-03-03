@@ -264,23 +264,28 @@ footer p {
 
 }
 
-/* Estilo para los enlaces de proyectos */
-.project-link {
-    display: inline-block;
-    color: #8d7b68; /* Color bronce/dorado */
-    text-decoration: none;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border: 1px solid #e5e0d8; /* Un marco fino y elegante */
+/* --- ESTILO PARA LOS ENLACES DE PROYECTOS (CORREGIDO) --- */
+/* Usamos selectores más específicos para que el navegador le haga caso */
+
+main ul li a.project-link {
+    display: inline-block !important;
+    color: #8d7b68 !important; /* Color bronce forzado */
+    text-decoration: none !important;
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic !important;
+    font-size: 1.2rem !important;
+    padding: 15px 25px;
+    border: 1px solid #8d7b68; /* Marco color bronce */
+    border-radius: 8px; /* Bordes un poco redondos como pediste antes */
     transition: all 0.4s ease;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    background-color: transparent;
 }
 
-.project-link:hover {
-    background-color: #8d7b68;
-    color: #fff;
-    transform: scale(1.05); /* Crece un poquito al pasar el cursor */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+main ul li a.project-link:hover {
+    background-color: #8d7b68 !important;
+    color: #fff !important;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(141, 123, 104, 0.2);
 }
+
