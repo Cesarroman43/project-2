@@ -4,7 +4,7 @@
     document.body.appendChild(cursor);
 
     document.addEventListener('mousemove', (e) => {
-        // Esta línea es la que hace que el círculo siga al mouse
+        // Esto mueve el círculo siguiendo las coordenadas del ratón
         cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
     });
 
@@ -54,5 +54,6 @@
         }
     });
 });
+
 
 
