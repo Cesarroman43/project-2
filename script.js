@@ -1,10 +1,15 @@
-// 1. CURSOR PERSONALIZADO (CORREGIDO)
+/* ======================================================
+   ESTILO: LUXURY KINETICS - MyStudyJourney
+   ====================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. CURSOR PERSONALIZADO (CORREGIDO)
     const cursor = document.createElement('div');
     cursor.classList.add('custom-cursor');
     document.body.appendChild(cursor);
 
     document.addEventListener('mousemove', (e) => {
-        // Esto mueve el círculo siguiendo las coordenadas del ratón
+        // translate3d es más fluido para el movimiento del cursor
         cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
     });
 
@@ -21,7 +26,7 @@
                 entry.target.classList.add('is-visible');
             } else {
                 if (entry.target.tagName === 'VIDEO') {
-                    entry.target.pause(); // Pausa si dejas de verlo
+                    entry.target.pause(); 
                 }
             }
         });
@@ -40,7 +45,7 @@
     document.body.appendChild(progressBar);
 
     window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const winScroll = document.documentElement.scrollTop; // Ajustado para mejor compatibilidad
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         progressBar.style.width = scrolled + "%";
@@ -53,7 +58,4 @@
             navbar.classList.remove('nav-scrolled');
         }
     });
-});
-
-
-
+}); // <--- ESTA LLAVE ES LA QUE CIERRA TODO EL CÓDIGO
