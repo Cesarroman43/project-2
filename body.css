@@ -315,20 +315,18 @@ p.reveal-element, video.reveal-element {
     transition-delay: 0.2s;
 }
 
-/* --- CURSOR DE AUTOR (CORREGIDO) --- */
 .custom-cursor {
     width: 20px;
     height: 20px;
-    border: 2px solid #8d7b68 !important; /* Más visible */
+    border: 2px solid #8d7b68 !important;
     border-radius: 50%;
     position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none; /* Crucial: para que no bloquee los clics */
-    z-index: 999999 !important; /* Por encima de todo */
+    top: 0;   /* Dejar en 0 */
+    left: 0;  /* Dejar en 0 */
+    pointer-events: none; /* ESTO ES VITAL: permite hacer clic a través del círculo */
+    z-index: 999999 !important;
     transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
     background-color: transparent;
-    /* Quitamos el transform de aquí porque lo pone el JS */
 }
 
 .cursor-hover {
@@ -370,6 +368,7 @@ p.reveal-element, video.reveal-element {
         cursor: none !important; 
     }
 }
+
 
 
 
