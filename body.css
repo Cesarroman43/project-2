@@ -362,12 +362,15 @@ p.reveal-element, video.reveal-element {
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-/* --- OCULTAR CURSOR ORIGINAL EN PC --- */
+/* --- VERSIÓN PROFESIONAL --- */
 @media (min-width: 1024px) {
-    body, a, button, video, .gallery-item { 
+    body.custom-cursor-active, 
+    body.custom-cursor-active a, 
+    body.custom-cursor-active button { 
         cursor: none !important; 
     }
 }
+
 
 
 
