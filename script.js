@@ -3,17 +3,17 @@
    ====================================================== */
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. CURSOR PERSONALIZADO
+    // 1. CURSOR PERSONALIZADO (CORREGIDO)
     const cursor = document.createElement('div');
-    cursor.classList.add('custom-cursor');
+    cursor.className = 'custom-cursor'; // Usamos className para asegurar
     document.body.appendChild(cursor);
 
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+        // Usamos translate3d para mayor suavidad y rendimiento
+        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
     });
 
-    const links = document.querySelectorAll('a, button, video, .gallery-item');
+    const links = document.querySelectorAll('a, button, video, .gallery-item, .project-link');
     links.forEach(link => {
         link.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
         link.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
@@ -59,3 +59,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
