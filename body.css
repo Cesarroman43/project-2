@@ -261,4 +261,26 @@ footer p {
 .gallery-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(141, 123, 104, 0.1);
+
+}
+
+/* Estilo para los enlaces de proyectos */
+.project-link {
+    display: inline-block;
+    color: #8d7b68; /* Color bronce/dorado */
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: 1px solid #e5e0d8; /* Un marco fino y elegante */
+    transition: all 0.4s ease;
+    margin-bottom: 15px;
+}
+
+.project-link:hover {
+    background-color: #8d7b68;
+    color: #fff;
+    transform: scale(1.05); /* Crece un poquito al pasar el cursor */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
