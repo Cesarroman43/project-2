@@ -294,14 +294,13 @@ main ul li a.project-link:hover {
 /* 1. Estado inicial: Totalmente invisible y desplazado */
 .reveal-element {
     opacity: 0 !important;
-    transform: translateY(50px) !important; /* Más distancia para que se note el movimiento */
+    transform: translateY(50px) !important; 
     filter: blur(10px) !important;
-    /* Transición muy lenta (1.5s) y fluida */
     transition: 
         opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
         transform 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
         filter 1.5s ease !important;
-    will-change: opacity, transform; /* Prepara al navegador para la animación */
+    will-change: opacity, transform;
 }
 
 /* 2. Estado visible: Se activa mediante el JavaScript */
@@ -311,13 +310,12 @@ main ul li a.project-link:hover {
     filter: blur(0) !important;
 }
 
-/* 3. Retraso especial para párrafos y videos (para efecto cascada) */
+/* 3. Retraso especial para párrafos y videos (efecto cascada) */
 p.reveal-element, video.reveal-element {
-    transition-delay: 0.2s; /* Tardan un poquito más en empezar para verse más natural */
-}
+    transition-delay: 0.2s;
 }
 
-/* Cursor de Autor */
+/* --- CURSOR PERSONALIZADO --- */
 .custom-cursor {
     width: 20px;
     height: 20px;
@@ -328,6 +326,7 @@ p.reveal-element, video.reveal-element {
     z-index: 9999;
     transition: transform 0.2s ease, background 0.3s ease;
     transform: translate(-50%, -50%);
+    background-color: transparent;
 }
 
 .cursor-hover {
@@ -335,7 +334,7 @@ p.reveal-element, video.reveal-element {
     background-color: rgba(141, 123, 104, 0.1);
 }
 
-/* Barra de lectura */
+/* --- BARRA DE PROGRESO (LECTURA) --- */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -346,7 +345,7 @@ p.reveal-element, video.reveal-element {
     width: 0%;
 }
 
-/* Ajuste de Navbar al bajar */
+/* --- EFECTO NAVBAR AL HACER SCROLL --- */
 .nav-scrolled {
     padding: 15px 0 !important;
     background-color: rgba(255, 255, 255, 0.85) !important;
@@ -354,9 +353,11 @@ p.reveal-element, video.reveal-element {
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-/* Ocultar cursor real en PC para usar el de lujo */
+/* --- OCULTAR CURSOR ORIGINAL EN PC --- */
 @media (min-width: 1024px) {
-    body { cursor: none; }
-    a, button, video { cursor: none; }
+    body, a, button, video, .gallery-item { 
+        cursor: none !important; 
+    }
 }
+
 
