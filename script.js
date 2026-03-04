@@ -65,5 +65,38 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('nav-scrolled');
         }
     });
+
+    /* --- EFECTO PREMIUM PARA LATEST ENTRIES --- */
+    const entryCard = document.querySelector('.entry-card');
+    const entryImage = document.querySelector('.entry-image img');
+
+    if (entryCard && entryImage) {
+        entryCard.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = entryCard.getBoundingClientRect();
+            
+            // Calculamos la posición del ratón respecto al centro de la tarjeta
+            const x = (e.clientX - left) / width - 0.5;
+            const y = (e.clientY - top) / height - 0.5;
+
+            // Aplicamos una rotación muy leve (máximo 2 grados para mantener la elegancia)
+            // Esto crea un efecto de profundidad 3D
+            entryImage.style.transform = `
+                perspective(1000px) 
+                rotateY(${x * 4}deg) 
+                rotateX(${y * -4}deg) 
+                scale3d(1.02, 1.02, 1.02)
+            `;
+        });
+
+        entryCard.addEventListener('mouseleave', () => {
+            // Regresa a su estado original suavemente
+            entryImage.style.transform = `
+                perspective(1000px) 
+                rotateY(0deg) 
+                rotateX(0deg) 
+                scale3d(1, 1, 1)
+            `;
+        });
+    }
 }); // <--- ESTA LLAVE ES LA QUE CIERRA TODO EL CÓDIGO
 
