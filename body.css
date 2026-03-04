@@ -371,6 +371,129 @@ p.reveal-element, video.reveal-element {
     }
 }
 
+/* --- SECCIÓN LATEST ENTRIES --- */
+.latest-entries {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: left; /* Como en la imagen */
+    margin-bottom: 40px;
+    color: #0d1b2a;
+}
+
+.entry-card {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.entry-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.entry-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px; /* Un toque sutil como la captura */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.entry-content {
+    flex: 1;
+}
+
+.entry-meta {
+    font-size: 0.8rem;
+    color: #8d7b68;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.entry-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin: 15px 0;
+    color: #1a1a1a;
+    font-style: italic;
+}
+
+.entry-excerpt {
+    font-family: 'Lato', sans-serif !important; /* Más legible para párrafos largos */
+    font-style: normal !important;
+    text-align: left !important;
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.entry-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e0d8;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Ajuste para móviles: la imagen arriba y el texto abajo */
+@media (max-width: 768px) {
+    .entry-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .section-title {
+        text-align: center;
+    }
+}
+
+/* --- AJUSTES EXCLUSIVOS: LATEST ENTRY --- */
+
+/* 1. Suavizado de la imagen para el efecto 3D del JS */
+.entry-image img {
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    will-change: transform;
+}
+
+/* 2. Estilo de los textos de la nueva entrada */
+.entry-meta {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #8d7b68;
+    text-transform: uppercase;
+}
+
+.entry-excerpt {
+    font-family: 'Lato', sans-serif !important;
+    font-style: normal !important;
+    text-align: left !important;
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* 3. Línea decorativa inferior (como en la captura de Wix) */
+.entry-footer {
+    border-top: 1px solid #e5e0d8;
+    padding-top: 15px;
+    margin-top: 20px;
+}
+
+.entry-footer span {
+    font-size: 0.8rem;
+    color: #999;
+    font-family: 'Lato', sans-serif;
+}
+
+
 
 
 
